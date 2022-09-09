@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0rem;
+  padding: 0;
+}
+
+.input-txt {
+  width: 40%;
+  height: 6vh;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  
+}
+.output-txt {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.flag-list {
+  font-size: 3rem;
+}
