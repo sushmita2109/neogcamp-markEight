@@ -1,34 +1,34 @@
 import { useState } from "react";
 import "./App.css";
 
-var flagList = {
-  "🏳️‍🌈": "Rainbow Flag",
-  "🏳️‍⚧️": "Transgender Flag",
-  "🇺🇦": "Ukraine",
-  "🇺🇬": "Uganda",
-  "🇹🇼": "Taiwan",
-  "🇧🇭":"Bahrain",
-  "🇧🇴":"Bolivia",
-  "🇧🇹":"Bhutan",
-  "🇨🇳":"China",
-  "🇩🇲":"Dominica"
+var emojiList = {
+  "😀": "Grinning Face",
+  "😆": "Grinning Squinting Face",
+  "😅": "Grinning Face with Sweat",
+  "🤣": "Rolling on the Floor Laughing",
+  "😂": "Face with Tears of Joy",
+  "🙂": "Slightly Smiling Face",
+  "🙃": "Upside-Down Face",
+  "🫠": "Melting Face",
+  "😉": "Winking Face",
+  "😇": "Smiling Face with Halo"
 };
-var flags = Object.keys(flagList);
+var emojis = Object.keys(emojiList);
 export default function App() {
   var [meaning, setMeaning] = useState("");
 
   function inputHandler(event) {
     var input = event.target.value;
 
-    meaning = flagList[input];
+    meaning = emojiList[input];
     if (meaning === undefined) {
       meaning = "Symbol is not in database";
     }
     setMeaning(meaning);
   }
 
-  function clickHandler(flag) {
-    meaning = flagList[flag];
+  function clickHandler(emoji) {
+    meaning = emojiList[flag];
     if (meaning === undefined) {
       meaning = "Symbol is not in database";
     }
@@ -37,18 +37,18 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Emoji Flag Translator</h1>
+      <h1>Emoji Translator</h1>
       <input className="input-txt" onChange={inputHandler}></input>
       <div className="output-txt">{meaning}</div>
-      <div style={{ fontSize: "larger" }}>Flags in the database are</div>
-      {flags.map((flag) => {
+      <div style={{ fontSize: "larger" }}>Emojis in the database are</div>
+      {emojis.map((emoji) => {
         return (
           <span
-            className="flag-list"
-            key={flag}
-            onClick={() => clickHandler(flag)}
+            className="emoji-list"
+            key={emoji}
+            onClick={() => clickHandler(emoji)}
           >
-            {flag}
+            {emoji}
           </span>
         );
       })}
